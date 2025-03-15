@@ -8,7 +8,7 @@ function App() {
   };
 
   return (
-    <Layout>
+    <Layout layout="bottom">
       <Search placeholder="Search movie" label="Search" onSearch={onMovieSearch} />
     </Layout>
   );

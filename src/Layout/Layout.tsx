@@ -3,9 +3,43 @@ import { FaGithubAlt } from 'react-icons/fa';
 import { SiSiemens } from 'react-icons/si';
 import './Layout.css';
 
-export function Layout({ children }: PropsWithChildren) {
+interface LayoutProps extends PropsWithChildren {
+  layout?: 'default' | 'bottom';
+}
+
+export function Layout({ children, layout = 'default' }: LayoutProps) {
+  if (layout === 'bottom') {
+    return <BottomLayout>{children}</BottomLayout>;
+  }
+
   return (
-    <div className="layout">
+    <DefaultLayout>{children}</DefaultLayout>
+  );
+}
+
+function BottomLayout({ children }: PropsWithChildren) {
+  return (
+    <div className="bottom-layout">
+      <div className="main-container">
+        <div className="top-navigation">
+          <Heading />
+        </div>
+        <div className="main-content">
+          {children}
+        </div>
+      </div>
+      <div className="left-navigation">
+        <div className="left-navigation-content">
+          <NavigationContent />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DefaultLayout({ children }: PropsWithChildren) {
+  return (
+    <div className="default-layout">
       <div className="left-navigation">
         <div className="left-navigation-content">
           <NavigationContent />
