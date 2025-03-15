@@ -1,0 +1,30 @@
+input {
+    font-size: 16px;
+    padding: 16px 14px;
+    border: none;
+    border-bottom: 1px solid #CF4B00;
+    line-height: 1.4em;
+    letter-spacing: 0.001em;
+    border-radius: 8px 8px 0 0;
+    margin: 8px 0;
+    background: rgba(0, 0, 0, 0.1);
+
+    &:focus {
+        outline: none;
+        border-bottom: 2px solid #009999;
+    }
+}
+
+input::placeholder {
+    color: gray;
+    font-style: italic;
+    font-size: 16px;
+    opacity: 1; /* Ensures the placeholder is not transparent */
+}
+
+label {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    clip-path: rect(0, 0, 0, 0);
+}
