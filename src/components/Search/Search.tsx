@@ -12,6 +12,7 @@ export function Search({ label, placeholder, onSearch }: SearchProps) {
   const [value, setValue] = useState<string>('');
   const debounceSearch = useDebounce(onSearch ?? console.log, 300);
   const id = useId();
+  console.log('Search rendered');
 
   function onHandleInputChange(event: ChangeEvent<HTMLInputElement>) {
     setValue(event.target.value);

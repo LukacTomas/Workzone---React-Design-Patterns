@@ -1,0 +1,29 @@
+.hp-card {
+    flex-direction: row;
+    max-width: unset;
+
+
+    .hp-card-image {
+        width: 200px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .section {
+        width: 100%;
+
+        .hp-card-header {
+            padding: 8px 26px;
+        }
+
+        .hp-card-content {
+            padding: 26px;
+
+            p {
+                padding: 4px 0;
+            }
+        }
+    }
+}

@@ -38,6 +38,7 @@ function BottomLayout({ children }: PropsWithChildren) {
 }
 
 function DefaultLayout({ children }: PropsWithChildren) {
+  console.log('DefaultLayout rendered');
   return (
     <div className="default-layout">
       <div className="left-navigation">
@@ -58,6 +59,7 @@ function DefaultLayout({ children }: PropsWithChildren) {
 }
 
 function Heading() {
+  console.log('Heading rendered');
   return (
     <h1>Workzone - React Design Patterns</h1>
   );
@@ -77,6 +79,7 @@ const naviationItems = [
 ];
 
 function NavigationContent() {
+  console.log('NavigationContent rendered');
   return (
     <ul>
       {

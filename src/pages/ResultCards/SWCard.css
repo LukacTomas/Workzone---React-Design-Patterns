@@ -1,0 +1,15 @@
+.sw-card {
+    .sw-card-header {
+        text-align: center;
+    }
+
+    .sw-card-content {
+        padding: 26px;
+        height: 100%;
+        color: rgba(0, 0, 0, 0.6);
+
+        p {
+            padding: 4px 0;
+        }
+    }
+}
