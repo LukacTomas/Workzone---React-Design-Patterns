@@ -1,15 +1,26 @@
 import './App.css';
 import { Search } from './components';
 import { Layout } from './Layout/Layout.tsx';
+import { useCharacter } from './stores';
+import { useCallback } from 'react';
+import { config } from './config/config.ts';
 
 function App() {
-  const onMovieSearch = (query: string) => {
-    console.log(query);
-  };
+  const { loading, error, characters, searchCharacters } = useCharacter();
+
+  console.log({
+    loading,
+    error,
+    characters,
+  });
+
+  const onMovieSearch = useCallback((query: string) => {
+    searchCharacters(query);
+  }, [searchCharacters]);
 
   return (
-    <Layout layout="bottom">
-      <Search placeholder="Search movie" label="Search" onSearch={onMovieSearch} />
+    <Layout>
+      <Search placeholder={`Search ${config.name} character`} label="Search" onSearch={onMovieSearch} />
     </Layout>
   );
 }
